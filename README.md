@@ -13,7 +13,7 @@ This project provides a responsive registration page with client-side validation
 1. Clone the repository to your local machine.
 
     ```bash
-    git clone https://github.com/AnjaliPujala/registration-page.git
+    git clone https://github.com/AnjaliPujala/RegistrationPage.git
     ```
 
 2. Open the `index.html` file in a web browser to view the registration page.
