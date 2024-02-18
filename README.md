@@ -16,7 +16,7 @@ This project provides a responsive registration page with client-side validation
     git clone https://github.com/AnjaliPujala/RegistrationPage.git
     ```
 
-2. Open the `index.html` file in a web browser to view the registration page.
+2. Open the `index1.html` file in a web browser to view the registration page.
 
 3. Explore the features by trying to register or login.
 
@@ -24,7 +24,7 @@ This project provides a responsive registration page with client-side validation
 
 ## Custom Styles
 
-The project includes a custom CSS file (`style2.css`) for additional styling, providing an appealing and responsive design.
+The project includes a custom CSS file (`style.css`) for additional styling, providing an appealing and responsive design.
 
 ## Contributing
 
