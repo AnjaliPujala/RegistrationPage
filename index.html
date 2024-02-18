@@ -1,149 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>REGISTRATION PAGE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style2.css">
-</head>
-<body >
-    <div class="container">
-        <div class="row p-1">
-            <div class="col-md-8 p-5 text-dark text-center">
-                <h1 class="header1">WELCOME</h1>
-                <p class="description">Ready to create amazing videos for your business? Sign up for Motion Cut today and get a 14-day free trial, unlimited access to all features, and a 10% discount on your first purchase.</p>
-                <p id="loginPara">Already have an account?<br/></p><input type="button" value="Login here!!" onclick="LoginorReg()" class="login" id="login">
-            </div>
-            <div class="col-md-4 p-2 text-dark text-center">
-                <h2 id="header2">REGISTER HERE</h2>
-                <input type="text" placeholder="User name" class="Username" id="usernameInput" onclick="UserName()" required>
-                <p id='usernameId'></p>
-            
-                <input type="email" placeholder="Email" class="email" id="emailInput" onclick="Email()" required>
-                <p id='emailId'></p>
-                <input type="password" placeholder="Password" onclick="PassWord()" class="password" id="passwordInput" required>
-                <p id='passwordId'></p>
-                <input type="password" placeholder="Confirm Password" class="password" onclick="Confirm()" id="confirmpasswordInput" required>
-                <p id='confirmpasswordId'></p>
-           
-            <input type="submit" title="Register" class="submit" onclick="checkFields()">
-            <p id="Message"></p>
-            </div>
-        </div>
-    </div>
-    <script>
-        function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-    }
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    function LoginorReg() {
-            let login = document.getElementById('login');
-            let loginPara = document.getElementById('loginPara');
-            let header = document.getElementById("header2");
-            let username = document.getElementById('usernameInput');
-            let password = document.getElementById('passwordInput');
-            let email = document.getElementById('emailInput');
-            let paraEmail = document.getElementById('emailId');
-            let ConfirmPass = document.getElementById('confirmpasswordInput');
-            let paraConfirm = document.getElementById('confirmpasswordId');
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-            if (login.value == "Login here!!") {
-                login.value = "Register";
-                loginPara.innerText = "Don't you have an account?";
-                header.innerText = "LOGIN HERE";
-                username.style.display = 'block';
-                password.style.display = 'block';
-                email.style.display = 'none';
-                ConfirmPass.style.display = 'none';
-                paraEmail.style.display = 'none';
-                paraConfirm.style.display = 'none';
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-            } else {
-                login.value = "Login here!!";
-                loginPara.innerText = "Already have an account?";
-                header.innerText = "REGISTER HERE";
-                username.style.display = 'block';
-                password.style.display = 'block';
-                email.style.display = 'block';
-                ConfirmPass.style.display = 'block'; 
-                paraEmail.style.display = 'block';
-                paraConfirm.style.display = 'block';
-            }
-        }
-    function checkFields() {
-    let username = document.getElementById('usernameInput');
-    let password = document.getElementById('passwordInput');
-    let email = document.getElementById('emailInput');
-    let paraUser = document.getElementById('usernameId');
-    let paraPass = document.getElementById('passwordId');
-    let paraEmail = document.getElementById('emailId');
-    let ConfirmPass = document.getElementById('confirmpasswordInput');
-    let paraConfirm = document.getElementById('confirmpasswordId');
-    let Message = document.getElementById('Message');
-
-    let Count=0;
-    if (ConfirmPass.value.length == 0) {
-        paraConfirm.innerText = 'This field is required';
-        ConfirmPass.style.borderColor = 'red';
-    } else if (ConfirmPass.value != password.value) {
-        paraConfirm.innerText = 'Provided passwords are not same';
-        ConfirmPass.style.borderColor = 'red';
-    } else {
-        paraConfirm.innerText = ''; 
-        ConfirmPass.style.borderColor = 'white';
-        Count=Count+1;
-    }
-
-    if (username.value.length == 0) {
-        paraUser.innerText = "Username is required";
-         username.style.borderColor = 'red';
-    } else if (username.value.length <= 4) {
-        paraUser.innerText = "User name is too short";
-        username.style.borderColor = 'red';
-    } else {
-        paraUser.innerText = '';  
-        username.style.borderColor = 'white';
-        Count=Count+1;
-    }
-
-    if (password.value.length == 0) {
-        paraPass.innerText = "Password field is required";
-        password.style.borderColor = 'red';
-    } else if (password.value.length < 8) {
-        paraPass.innerText = "Password length must contain 8 characters";
-        password.style.borderColor = 'red';
-    } else {
-        paraPass.innerText = '';  
-        password.style.borderColor = 'white';
-        Count=Count+1;
-    }
-
-    if (email.value.length == 0) {
-        paraEmail.innerText = "Email is required";
-        email.style.borderColor = 'red';
-    } 
-    else if (!isValidEmail(email.value)) {
-        paraEmail.innerText = "Enter a valid email address";
-        email.style.borderColor = 'red';
-    } 
-    else {
-        paraEmail.innerText = '';  
-        email.style.borderColor = 'white';
-        Count=Count+1;
-    }
-    if (Count == 4) {
-        Message.innerText = 'Registration successful!';
-        Message.style.color='green';
-        Count=0;
-    }
-    else{
-        Message.innerText ='' ;
-    }
-}
-
-    </script>
-</body>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
